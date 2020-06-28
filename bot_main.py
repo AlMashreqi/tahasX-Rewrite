@@ -13,14 +13,12 @@ print('''
    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 ''')
 
-config = ConfigParser()
-config.read('config.ini')
-TOKEN = config.get('bot_config', 'TOKEN')
-GUILD = config.get('server_config', 'GUILD_ID')
-WCI = config.get('server_config', 'WELCOME_CHANNEL_ID')
-RCI = config.get('server_config', 'RULES_CHANNEL_ID')
-GCI = config.get('server_config', 'GENERAL_CHANNEL_ID')
-PREFIX = config.get('bot_config', 'COMMANDS_PREFIX')
+TOKEN = os.environ['DISCORD_TOKEN']
+GUILD = os.environ['DISCORD_GUILD']
+WCI = os.environ['WELCOME_CHANNEL_ID']
+RCI = os.environ['RULES_CHANNEL_ID']
+GCI = os.environ['GENERAL_CHANNEL_ID']
+PREFIX = os.environ['COMMAND_PREFIX']
 
 bot = commands.Bot(command_prefix = str(PREFIX))
 bot.remove_command('help')
