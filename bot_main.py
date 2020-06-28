@@ -32,7 +32,7 @@ bot.ed_message = {}
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
-    await bot.change_presence(status = discord.Status.online, activity = discord.Game('w0help'))
+    await bot.change_presence(status = discord.Status.online, activity = discord.Game(f'{PREFIX}help'))
 
 # @bot.event
 # async def on_command_error(ctx, error):
