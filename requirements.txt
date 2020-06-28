@@ -1,2 +1,3 @@
 discord.py
+youtube_dl.py
 git+https://github.com/apex2504/python-corona-api.git
