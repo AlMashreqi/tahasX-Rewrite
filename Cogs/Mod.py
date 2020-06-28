@@ -62,7 +62,7 @@ class Mod(commands.Cog, name = 'Moderation'):
         elif isinstance(error, commands.MissingPermissions):
             await ctx.send("OOps! You don't have Permissions to That!")
 
-    @command.command(name='unmute', help='unmutes a Member')
+    @commands.command(name='unmute', help='unmutes a Member')
     @commands.has_permissions(kick_members=True)
     async def unmute(self, ctx, member: discord.Member):
         if member == None or member == ctx.message.author:
@@ -77,7 +77,7 @@ class Mod(commands.Cog, name = 'Moderation'):
             await channel.set_permissions(member, overwrite=overwrite)
         embed = discord.Embed(title='User Unmuted', description=f'{member.mention} has been Unmuted',
                               color=bot.color_code, timestamp=ctx.message.created_at)
-        embed.set_footer(text=f'© {self..user.name} | Owned by {ctx.guild.owner}', icon_url=self..user.avatar_url)
+        embed.set_footer(text=f'© {self.user.name} | Owned by {ctx.guild.owner}', icon_url=self.user.avatar_url)
         await ctx.send(embed=embed)
 
     @unmute.error
